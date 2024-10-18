@@ -1,11 +1,8 @@
 # Nextcloud docker-client
 This image provides you an alpine based image for syncing your files with a remote [nextcloud server ](https://nextcloud.com/)
 
-[![](https://images.microbadger.com/badges/image/juanitomint/nextcloud-client.svg)](https://microbadger.com/images/juanitomint/nextcloud-client "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/juanitomint/nextcloud-client.svg)](https://microbadger.com/images/juanitomint/nextcloud-client "Get your own version badge on microbadger.com")
 
-
-This image is based on the work made by: [Martin Peters](https://github.com/FreakyBytes)
+This image is based on the work made by: [Juan Ignacio Borda](https://github.com/juanitomint/nextcloud-client-docker)
 
 ## Example using local folder
 
@@ -121,5 +118,5 @@ whether or not nextcloud should be forced to sync hidden files
 default: false
 
 
-Any comment or propblem feel free to [fill an issue](https://github.com/juanitomint/nextcloud-client-docker/issues/new) or make a PR!
+Any comment or propblem feel free to [fill an issue](https://github.com/volker76/nextcloud-client-docker/issues).
 

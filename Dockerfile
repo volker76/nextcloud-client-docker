@@ -1,8 +1,5 @@
 FROM alpine:latest
-LABEL maintainer="juanignacioborda@gmail.com"
-ARG VCS_REF
-ARG BUILD_DATE
-ARG buildno
+
 ARG USER=ncsync
 ARG USER_UID=1000
 ARG USER_GID=1000
@@ -28,4 +25,4 @@ RUN apk update && apk add nextcloud-client moreutils sudo && rm -rf /etc/apk/cac
 # add run script
 ADD run.sh /usr/bin/run.sh
 
-CMD /usr/bin/run.sh
+ENTRYPOINT ["/usr/bin/run.sh"]
