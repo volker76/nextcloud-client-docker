@@ -2,7 +2,7 @@
 This image provides you an alpine based image for syncing your files with a remote [nextcloud server ](https://nextcloud.com/)
 
 
-This image is based on the work made by: [Juan Ignacio Borda](https://github.com/juanitomint/nextcloud-client-docker)
+This image is based on the work made by: [Juan Ignacio Borda](https://github.com/volkerhaensel/nextcloud-client-docker)
 
 ## Example using local folder
 
@@ -10,7 +10,7 @@ This image is based on the work made by: [Juan Ignacio Borda](https://github.com
       -v $(pwd)/sync-folder:/media/nextcloud \
       -e NC_USER=$username -e NC_PASS=$password \
       -e NC_URL=$server_url\
-      juanitomint/nextcloud-client
+      volkerhaensel/nextcloud-client
 
 ## Example using local folder and exclude settings. You have to place a "exclude" file and a "unsyncfolders" file into one directory and mount it into the docker container
 
@@ -19,7 +19,18 @@ This image is based on the work made by: [Juan Ignacio Borda](https://github.com
       -v /path/to/settingsfolder:/settings \
       -e NC_USER=$username -e NC_PASS=$password \
       -e NC_URL=$server_url\
-      juanitomint/nextcloud-client
+      volkerhaensel/nextcloud-client
+
+## Example syncing only a sub-path of the nextcloud.
+
+    docker run -it --rm \
+      -v $(pwd)/sync-folder:/media/nextcloud \
+      -e NC_PATH=/Documents \
+      -e NC_USER=$username -e NC_PASS=$password \
+      -e NC_URL=$server_url\
+      volkerhaensel/nextcloud-client
+
+
 
 ## Example for the file "exclude" in the settings folder
 
@@ -37,7 +48,7 @@ This image is based on the work made by: [Juan Ignacio Borda](https://github.com
       -v some_named_volume:/media/nextcloud \
       -e NC_USER=$username -e NC_PASS=$password \
       -e NC_URL=$server_url\
-      juanitomint/nextcloud-client
+      volkerhaensel/nextcloud-client
 
 ## Example one time run
 
@@ -46,7 +57,7 @@ This image is based on the work made by: [Juan Ignacio Borda](https://github.com
       -e NC_USER=$username -e NC_PASS=$password \
       -e NC_URL=$server_url\
       -e NC_EXIT=true\
-      juanitomint/nextcloud-client
+      volkerhaensel/nextcloud-client
 
 
 
